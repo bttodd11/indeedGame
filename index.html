@@ -8,29 +8,30 @@
 <div class="game">
     <div class="counter" id="counter">
         <div class="score">
-
         </div>
         </div>
 </div>
 <button type="button" id="start">Start</button>
 <button type="button" id="stop">Pause</button>
 
+<div class="score">
+</div>
+
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <div class="slidecontainer">
+        <p>Slider</p>
+        <input type="range" min="1" max="100" value="50" id="myRange">
+        <p>Value <span id="value"></span></p>
+        <button>Continue</button>
+      </div>
     </div>
   
   </div>
 <br>
-<div class="slidecontainer">
-    <p>Slider</p>
-    <input type="range" min="1" max="100" value="50" id="myRange">
-    <p>Value <span id="value"></span></p>
-  </div>
-
 <script src="javascript/main.js"></script>
 </body>
 
