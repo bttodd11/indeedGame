@@ -1,80 +1,71 @@
+//  Starting variables
 var score = 0;
 var int;
 const velocity = 0;
 
+// The function to start the setInterval that will start the 
+// game, This will drop 6 applicants every 4 seconds.
 const startGame = () => {
-    int = setInterval(function(){
+    int = setInterval(function () {
         for (i = 0; i < 6; i++) {
-            dropBox();
+            applicantDrop();
         }
     }
-    ,4000)
+        , 3000)
 }
 
-document.getElementById("start").onclick = function(){startGame()};
-document.getElementById("stop").onclick = function(){pauseGame()};
-
-function random(min,max){
- 	return Math.round(Math.random() * (max-min) + min);
-}
-
-function setBG(){
-  if (Math.round(Math.random())){
-    return "icons/bigPaper.png";
-  } 
-}
-
-
+// Pausing game that will clear the previous setInterval
 const pauseGame = () => {
     clearInterval(int);
 }
 
-function dropBox(){
+// Randomizer for size of icons between chosen px (10-100)
+function random(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+
+
+// The function that will drop the applicants with a random size
+// and a chosen speed
+function applicantDrop(){
+// Creating the box for the applicants
   var length = random(100, ($(".game").width() - 100));
   const velocity = 3500;
-  var size = random(10, 100);
+  var applicantSize = random(10, 100);
   var thisBox = $("<div/>", {
     class: "box",
-    style:  "width:" +size+ "px; height:"+size+"px; left:" + length+  "px; transition: transform " +velocity+ "ms linear;"
+    style:  "width:" + 
+    applicantSize+  "px; height:"+ 
+    applicantSize+  "px; left:" + 
+    length +  "px; transition: transform " + 
+    velocity+ "ms linear;"
   });
   
-  //set data and bg based on data
-  thisBox.data("test", Math.round(Math.random()));
-  if(thisBox.data("test")){
-    thisBox.css({"background": "url('icons/bigPaper.png')", "background-size":"contain"});
+  thisBox.data("applicants", Math.round(Math.random()));
+  if(thisBox.data("applicants")){
+    thisBox.css({"background": "url('icons/bubble.png')", "background-size":"contain"});
   } 
   
   
-  //insert gift element
-  $(".game").append(thisBox);
+    // Insert applicant to the game
+    $(".game").append(thisBox);
+    setTimeout(function () {
+        thisBox.addClass("move");
+    }, random(0, 3000));
   
-  //random start for animation
-   setTimeout(function(){
-    thisBox.addClass("move");
-  }, random(0, 3000));
-  
-  //remove this object when animation is over
-  thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-    $(this).remove();
-  });
+
+    // If the applicant reachs the botton of the length remove 
+    // The applicant from the screen
+    thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+        function (event) {
+            $(this).remove();
+        });
 }
 
-// function start(){
-// var runGame = setInterval(run, 10);
-// var stop = document.getElementById("stop").onclick = function(){start()};
-// if(stop){
-//     clearInterval(runGame)
-// }
-// function run(){
-//     for (i = 0; i < 3; i++) { 
-//         dropBox();
-//     }
-// }
-// }
 
 $(document).on('click', '.box', function(){
-  if($(this).data("test")){
+  if($(this).data("applicants")){
     score += 1;
     console.log(score)
   } 
@@ -102,30 +93,54 @@ function countdown() {
 
 countdown();
 
+// jQuery needed for onClicks and Modal
+
+$("#pause").hide();
+
+
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("pauseWindow");
 
-// Get the button that opens the modal
-var btn = document.getElementById("stop");
+// Opens modal, pauses game
+var btn = document.getElementById("pause");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+// Test
+document.getElementById("start").onclick = function() {
+    startGame();
+    $("#start").hide()
+    $("#pause").show()
+  }
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+document.getElementById("pause").onclick = function() {
   modal.style.display = "block";
-  pauseGame()
+  pauseGame();
+  $("#pause").show()
+
+
 }
 
+document.getElementsByClassName("box").onclick = function () {
+    if ($(this).data("applicants")) {
+        score += 1;
+        console.log(score)
+    }
+    $(".score").html(score);
+    $(this).remove();
+}
+
+
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+span.onclick = function () {
+    modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
