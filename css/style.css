@@ -1,21 +1,63 @@
 .game{
-    background-image:  url("../background/indeedBG.png");
     width:100%;
-    height:750px;
+    height:650px;
     position: relative;
     overflow: hidden;
     background-position: center;
     background-repeat: no-repeat;
   }
-  
-  .score{
-    font-size: 200px;
-    z-index: 20;
-    font-family: arial;
+  #logo{
+    padding-top: 8%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    opacity: .4;
+  }
+  #reset{
+      font-size: 25px;
+  }
+  p{
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    color: grey;
+    opacity: .5;
+  }
+  button{
+    background:none;
+    border:none;
+    width:100%;
+    color: #1C13A1;
+    opacity: .4;
+    cursor: pointer;
+    font-size: 70px;
+    font-family: 'Kalam', cursive;
+    margin-top: 5%;
+  }
+  h5{
+    font-family: 'Noto Serif', serif;
+    font-size: 40px;
     color: blue;
+    text-align: center;
+    opacity: .4;
+  }
+  .score{
+    font-size: 250px;
+    z-index: 5;
+    font-family: 'Shadows Into Light', cursive;
+    color: grey;
+    opacity: .7;
     user-select:none;
     width:100%;
     text-align:center;
+  }
+  .descT{
+      font-size: 40px;
+      font-family: 'Noto Serif', serif;
+      text-align: center;
+      opacity: .3;
+      color: blue;
   }
   
   .box{
@@ -32,18 +74,6 @@
      transform:translateY(120vh);
   }
   
-  .counter{
-    width:100%;
-    margin: 0 auto;
-    text-align:center;
-    font-family:arial;
-    color:red;
-    font-weight:bold;
-    padding-top:10px;
-    font-size:20px;
-    position:relative;
-    z-index:9999;
-  }
   .slidecontainer {
     width: 100%; /* Width of the outside container */
   }
@@ -60,6 +90,29 @@
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
   }
+  .inputShift{
+     margin-left: 37%;
+  }
+  .inputDifficult{
+    font-size: 30px;
+    font-family: 'Kalam', cursive;
+    color: red;
+    padding-right: 3%;
+
+  }
+  .inputEasy{
+    font-size: 30px;
+    font-family: 'Kalam', cursive;
+    color: green;
+    padding-left: 3%;
+
+  }
+  .slideText{
+      font-size: 45px;
+      font-family: 'Kalam', cursive;
+      color: #1C13A1;
+      opacity: .4;
+  }
   
   /* Mouse-over effects */
   .slider:hover {
@@ -72,7 +125,6 @@
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
   
