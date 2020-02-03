@@ -1,18 +1,20 @@
 //  Starting variables
-var score = 0;
-var int;
-var slider = document.getElementById("myRange");
-var output = document.getElementById("value");
+let score = 0;
+let int;
+const slider = document.getElementById("myRange");
+const output = document.getElementById("value");
+const modal = document.getElementById("pauseWindow");
+const btn = document.getElementById("pause");
+const span = document.getElementsByClassName("close")[0];
+const toggle = document.getElementById("toggle");
+const reset = document.getElementById("reset");
+const game = document.getElementsByClassName("game");
+
 output.innerHTML = slider.value;
-var velocity = 5000;
+let velocity = 5000;
 
 
-$(document ).ready(function() {
-    // $("#instructions").fadeOut(9000)
-});
-
-
-slider.oninput = function() {
+slider.oninput = () => {
     output.innerHTML = this.value;
   }
 
@@ -36,7 +38,7 @@ const pauseGame = () => {
 }
 
 // Randomizer for needed functions
-function random(min, max) {
+const random = (min, max) => {
     return Math.round(Math.random() * (max - min) + min);
 }
 
@@ -44,21 +46,20 @@ function random(min, max) {
 
 // The function that will drop the applicants with a random size
 // and a chosen speed
-function applicantDrop(){
-// Creating the box for the applicants
-  var length = random(100, ($(".game").width() - 100));
-  var velocity = document.getElementById("myRange").value * 100;
-  console.log(velocity)
-  var applicantSize = random(30, 100);
-  var thisBox = $("<div/>", {
-    class: "box",
-    style:  "width:" + 
-    applicantSize+  "px; height:"+ 
-    applicantSize+  "px; left:" + 
-    length +  "px; transition: transform " + 
-    velocity+ "ms linear;"
-  });
-  
+const applicantDrop = () => {
+    // Creating the box for the applicants
+    const length = random(100, (game.width - 100));
+    const velocity = document.getElementById("myRange").value * 100;
+    const applicantSize = random(30, 100);
+    const thisBox = document.createElement("<div/>", {
+        class: "box",
+        style: "width:" +
+            applicantSize + "px; height:" +
+            applicantSize + "px; left:" +
+            length + "px; transition: transform " +
+            velocity + "ms linear;"
+    });
+
     thisBox.data("applicants", Math.round(Math.random() * 5));
     if (thisBox.data("applicants") == 1) {
         thisBox.css({ "background": "url('icons/teacher.png')", "background-size": "contain" });
@@ -74,7 +75,7 @@ function applicantDrop(){
   
   
     // Insert applicant to the game
-    $(".game").append(thisBox);
+    game.appendChild(thisBox);
     setTimeout(function () {
         thisBox.addClass("move");
     }, random(0, 3000));
@@ -109,9 +110,9 @@ $(document).on('click', '.box', function () {
 });
 
 
-function clock() {
+const clock = () => {
     var seconds = 120;
-    function count() {
+    const count = () => {
         seconds--;
         if (seconds > 0) {
             setTimeout(count, 1000);
@@ -124,44 +125,28 @@ function clock() {
 }
 clock();
 
-// jQuery needed for onClicks and Modal
+const toggleFunc = function() {
+    if (toggle.innerHTML === "Start") {
+        startGame();
+        toggle.innerHTML = "Pause";
+      } else if(toggle.innerHTML === "Pause"){
+          pauseGame()
+          modal.style.display = "block";
+         toggle.innerHTML = "Start";
 
-$("#pause").hide();
-
-
-
-// Get the modal
-var modal = document.getElementById("pauseWindow");
-
-// Opens modal, pauses game
-var btn = document.getElementById("pause");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// Test
-document.getElementById("start").onclick = function() {
-    startGame();
-    $("#start").hide()
-    $("#pause").show()
+      }
   }
 
-// When the user clicks on the button, open the modal
-document.getElementById("pause").onclick = function() {
-  modal.style.display = "block";
-  pauseGame();
-  $("#pause").show()
-}
-document.getElementById("resume").onclick = function() {
+const resumeGame = () => {
     modal.style.display = "none";
     startGame();
-  }
-document.getElementById("reset").onclick = function() {
+}
+const resetFunc = () => {
     modal.style.display = "none";
     clock()
     startGame()
     score = 0
     $(".score").html(score);
-    
   }
 
 

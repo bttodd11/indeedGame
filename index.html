@@ -14,8 +14,7 @@
         </div>
         </div>
 </div>
-<button type="button" id="start">Start</button>
-<button type="button" id="pause">Pause</button>
+<button type="button" onclick="toggleFunc()" id="toggle">Start</button>
 <div id="pauseWindow" class="modal">
 
     <!-- Modal content -->
@@ -27,8 +26,8 @@
         <span class="inputDifficult">Difficult</span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputEasy">Easy</span n></span>
         </div>
         <p class="slideText">Value <span id="value"></span></p>
-        <button type="button" id="resume">Continue</button>
-        <button type="button" id="reset">Reset</button>
+        <button type="button" onclick="resumeGame()" id="resume">Continue</button>
+        <button type="button" onclick="resetFunc()" id="reset">Reset</button>
       </div>
     </div>
   
