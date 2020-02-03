@@ -48,34 +48,49 @@ const random = (min, max) => {
 // and a chosen speed
 const applicantDrop = () => {
     // Creating the box for the applicants
-    const length = random(100, (game.width - 100));
-    const velocity = document.getElementById("myRange").value * 100;
-    const applicantSize = random(30, 100);
-    const thisBox = document.createElement("<div/>", {
-        class: "box",
-        style: "width:" +
-            applicantSize + "px; height:" +
-            applicantSize + "px; left:" +
-            length + "px; transition: transform " +
-            velocity + "ms linear;"
-    });
+    const length = random(100, (game[0].offsetWidth - 100));
+    let velocity = document.getElementById("myRange").value * 100;
+    let applicantSize = random(30, 100);
+    let thisBox = document.createElement("DIV");
+    thisBox.class = "box";
+    thisBox.style =  "width:" + applicantSize + "px;" + "height:" + applicantSize + "px;" + "left:" + length + "px;" + "transition: transform " + velocity + "ms linear;" 
 
-    thisBox.data("applicants", Math.round(Math.random() * 5));
-    if (thisBox.data("applicants") == 1) {
-        thisBox.css({ "background": "url('icons/teacher.png')", "background-size": "contain" });
-    } else if (thisBox.data("applicants") == 2) {
-        thisBox.css({ "background": "url('icons/nursef.png')", "background-size": "contain" });
-    }
-    else if (thisBox.data("applicants") == 3) {
-        thisBox.css({ "background": "url('icons/nurse.png')", "background-size": "contain" });
-    }
-    else if (thisBox.data("applicants") == 4) {
-        thisBox.css({ "background": "url('icons/doctor.png')", "background-size": "contain" });
+
+
+    //     class: "box",
+    //     style: "width:" +
+    //         applicantSize + "px; height:" +
+    //         applicantSize + "px; left:" +
+    //         length + "px; transition: transform " +
+    //         velocity + "ms linear;"
+    // });
+    thisBox.applicants = Math.round(Math.random() * 5);
+    switch (thisBox.applicants) {
+        case 0:
+            thisBox.style.background = "url('icons/teacher.png')";
+            thisBox.style.backgroundSize =  "contain";
+            break;
+
+        case 1:
+            thisBox.style.background = "url('icons/nurse.png')";
+            thisBox.style.backgroundSize =  "contain";
+            break;
+        
+        case 2:
+            thisBox.style.background = "url('icons/nursef.png')";
+            thisBox.style.backgroundSize =  "contain";
+            break;
+
+        case 3:
+            thisBox.style.background = "url('icons/doctor.png')";
+            thisBox.style.backgroundSize =  "contain";
+            break;
+ 
     }
   
   
     // Insert applicant to the game
-    game.appendChild(thisBox);
+    $(".game").append(thisBox);
     setTimeout(function () {
         thisBox.addClass("move");
     }, random(0, 3000));
