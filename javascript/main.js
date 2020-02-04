@@ -22,7 +22,7 @@ let velocity = 5000;
 
 
 slider.oninput = () => {
-    output.innerHTML = this.value;
+    output.innerHTML = slider.value;
   }
 
 
@@ -207,15 +207,31 @@ const clock = () => {
 clock();
 
 const toggleFunc = function() {
-    if (toggle.innerHTML === "Start") {
-        startGame();
-        toggle.innerHTML = "Pause";
-      } else if(toggle.innerHTML === "Pause"){
-          pauseGame()
-          modal.style.display = "block";
-         toggle.innerHTML = "Start";
+    switch (toggle.innerHTML) {
+        case "Start":
+            startGame();
+            toggle.innerHTML = "Pause";
+            break;
+    
+        case "Pause":
+            pauseGame()
+            modal.style.display = "block";
+            break;
+    }
+  }
 
-      }
+  const toggleModal = function(){
+    switch (resume.innerHTML) {
+        case "Continue":
+            modal.style.display = "none";
+            startGame();
+            break;
+        case "Reset":
+            modal.style.display = "none";
+            resetFunc();
+        break;
+    }
+
   }
 
 const resumeGame = () => {
@@ -223,7 +239,7 @@ const resumeGame = () => {
     startGame();
 }
 const resetFunc = () => {
-    modal.style.display = "none";
+    modal.style.display = "block";
     clock()
     startGame()
     score = 0
