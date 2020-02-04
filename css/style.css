@@ -1,19 +1,17 @@
 .game{
     width: 50vw;;
     height: 50vw;
+    background-image: url("../background/indeedBG.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    border: 1px solid black;
+    border: 3px solid black;
     margin: 0 auto;
+    border-radius: 25px;
   }
-  /* #logo{
-    padding-top: 8%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    opacity: .4;
-  } */
+
   .reset{
       font-size: 25px;
   }
@@ -29,31 +27,34 @@
     border:none;
     width:100%;
     color: #1C13A1;
-    opacity: .4;
+    opacity: .8;
     cursor: pointer;
     font-size: 70px;
     font-family: 'Kalam', cursive;
-    margin-top: 5%;
+    margin-top: 2%;
   }
   h5{
     font-family: 'Noto Serif', serif;
     font-size: 40px;
     color: blue;
     text-align: center;
-    opacity: .4;
+    opacity: .8;
   }
   .score{
-    font-size: 60px;
+    font-size: 90px;
     font-family: 'Shadows Into Light', cursive;
     color: grey;
     opacity: .7;
-    text-align:center;
+    text-align:right;
+    position: absolute;
+    left: 43%;
+    top: 0px;
   }
   .descT{
       font-size: 40px;
       font-family: 'Noto Serif', serif;
       text-align: center;
-      opacity: .3;
+      opacity: .8;
       color: blue;
   }
   

@@ -56,7 +56,7 @@ gameTimer = function(timestamp){
 // game, This will drop 6 applicants every 4 seconds.
 const startGame = () => {
     gameRaf = requestAnimationFrame(gameTimer);
-    clock();
+     clock();
 };
 
 // Pausing game that will clear the previous setInterval
@@ -76,9 +76,9 @@ const createApplicant = () => {
     let yPos;
 
     if(leftPos + applicantSize > gameWidth){
-        left = leftPos - applicantSize;
+        leftPos = leftPos - applicantSize;
     } else if (leftPos - applicantSize < 0) {
-        left = leftPos + applicantSize;
+        leftPos = leftPos + applicantSize;
     }
     
     thisBox.className = 'box';
@@ -118,7 +118,27 @@ const createApplicant = () => {
     game.appendChild(thisBox);
     thisBox.addEventListener('click', () => scoreSub())
 
-  
+};
+
+
+
+const applicantDrop = (topPos) => {
+    const length = random(100, ($(".game").width() - 100));
+    let velocity = document.getElementById("myRange").value * 100;
+
+    thisBox.style.transform = 'translateY(' + topPos + 'px)';
+
+    'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
+        .split(' ')
+        .forEach((eventName) => {
+            thisBox.addEventListener(eventName, () => thisBox.remove(), { once: true });
+        });
+
+
+    }
+
+
+    
     const scoreSub = () => {
         var value = thisBox.style.width.substring(0, thisBox.style.width.length - 3);
   
@@ -163,27 +183,15 @@ const createApplicant = () => {
              break;
 
      }
+     console.log(thisBox)
      $(".score").html(score);
      thisBox.remove()
     };
-}
+
 
   
 
  
-
-const applicantDrop = (topPos) => {
-    const length = random(100, ($(".game").width() - 100));
-    let velocity = document.getElementById("myRange").value * 100;
-
-    thisBox.style.transform = 'translateY(' + topPos + 'px)';
-
-    'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
-        .split(' ')
-        .forEach((eventName) => {
-            thisBox.addEventListener(eventName, () => thisBox.remove(), { once: true });
-        });
-}
 
 
 
@@ -220,32 +228,17 @@ const toggleFunc = function() {
     }
   }
 
-  const toggleModal = function(){
-    switch (resume.innerHTML) {
-        case "Continue":
-            modal.style.display = "none";
-            startGame();
-            break;
-        case "Reset":
-            modal.style.display = "none";
-            resetFunc();
-        break;
-    }
-
-  }
-
 const resumeGame = () => {
     modal.style.display = "none";
     startGame();
 }
 const resetFunc = () => {
-    modal.style.display = "block";
+    modal.style.display = "none";
     clock()
     startGame()
     score = 0
     $(".score").html(score);
   }
-
 
 
 // When the user clicks on <span> (x), close the modal
