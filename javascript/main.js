@@ -48,62 +48,54 @@ const random = (min, max) => {
 // and a chosen speed
 const applicantDrop = () => {
     // Creating the box for the applicants
-    const length = random(100, (game[0].offsetWidth - 100));
+    const length = random(100, ($(".game").width() - 100));
     let velocity = document.getElementById("myRange").value * 100;
     let applicantSize = random(30, 100);
-    let thisBox = document.createElement("DIV");
+    let thisBox = document.createElement("div");
     thisBox.class = "box";
-    thisBox.style =  "width:" + applicantSize + "px;" + "height:" + applicantSize + "px;" + "left:" + length + "px;" + "transition: transform " + velocity + "ms linear;" 
+    thisBox.style =  "width:" + applicantSize + "px;" + "height:" + applicantSize + "px;" + "left:" + length + "px;" + "transition: transform " + velocity + "ms linear;";
+    
 
-
-
-    //     class: "box",
-    //     style: "width:" +
-    //         applicantSize + "px; height:" +
-    //         applicantSize + "px; left:" +
-    //         length + "px; transition: transform " +
-    //         velocity + "ms linear;"
-    // });
     thisBox.applicants = Math.round(Math.random() * 5);
     switch (thisBox.applicants) {
         case 0:
             thisBox.style.background = "url('icons/teacher.png')";
-            thisBox.style.backgroundSize =  "contain";
+            thisBox.style.backgroundSize = "contain";
             break;
 
         case 1:
             thisBox.style.background = "url('icons/nurse.png')";
-            thisBox.style.backgroundSize =  "contain";
+            thisBox.style.backgroundSize = "contain";
             break;
         
         case 2:
             thisBox.style.background = "url('icons/nursef.png')";
-            thisBox.style.backgroundSize =  "contain";
+            thisBox.style.backgroundSize = "contain";
             break;
 
         case 3:
             thisBox.style.background = "url('icons/doctor.png')";
-            thisBox.style.backgroundSize =  "contain";
+            thisBox.style.backgroundSize = "contain";
             break;
- 
     }
   
   
     // Insert applicant to the game
-    $(".game").append(thisBox);
+    game[0].appendChild(thisBox);
+
     setTimeout(function () {
-        thisBox.addClass("move");
+        thisBox.classList.add("move");
     }, random(0, 3000));
 
-    
 
-    // If the applicant reachs the botton of the length remove 
-    // The applicant from the screen
-    thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-        function (event) {
-            $(this).remove();
-        });
+    'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
+    .split(' ')
+    .forEach((eventName) => {
+      thisBox.addEventListener(eventName, () => thisBox.remove(), { once: true });
+    });
+
 }
+
 
 
 $(document).on('click', '.box', function () {

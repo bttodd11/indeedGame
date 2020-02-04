@@ -1,19 +1,17 @@
 .game{
     width:100%;
-    height:650px;
+    height:850px;
     position: relative;
     overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
   }
-  #logo{
+  /* #logo{
     padding-top: 8%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     opacity: .4;
-  }
+  } */
   #reset{
       font-size: 25px;
   }
@@ -64,7 +62,7 @@
     width: 100px;
     height: 100px;
     position:absolute;
-    top: -150px;
+    top: -950px;
     transition: transform 1.5s linear;
     cursor: pointer;
     z-index:100;
