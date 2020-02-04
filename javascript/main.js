@@ -3,6 +3,7 @@ let score = 0;
 let int;
 let timeElasped;
 let thisBox;
+let value;
 const slider = document.getElementById("myRange");
 const output = document.getElementById("value");
 const modal = document.getElementById("pauseWindow");
@@ -27,17 +28,19 @@ slider.oninput = () => {
 
 
 const animateApplicant = () => {
-    var animateTime = slider.value/ 60 + 'px',
+    const boxArray = Array.from(document.querySelectorAll('.box'));
+    var animateTime = slider.value / 60 + 'px',
     applicantPosition = parseInt($('.box').css('top'));
 
-    if(applicantPosition >= gameHeight){
-        $('.box:first-child').remove();
-    } else {
+    if(applicantPosition >= gameHeight){gameHeight.removeChild(boxArray[0])}
+    else{
         $('.box').css({
             top: '+=' + animateTime,
+
         });
     }
-};
+}
+
 
 gameTimer = function(timestamp){
     gameRaf = window.requestAnimationFrame(gameTimer);
@@ -56,7 +59,6 @@ gameTimer = function(timestamp){
 // game, This will drop 6 applicants every 4 seconds.
 const startGame = () => {
     gameRaf = requestAnimationFrame(gameTimer);
-     clock();
 };
 
 // Pausing game that will clear the previous setInterval
@@ -96,6 +98,7 @@ const createApplicant = () => {
         yPos +
         'px;';
 
+     thisBox.setAttribute('data-ptvalue', Math.round(applicantSize / 10))
     switch (randomIcon) {
         case 0:
             thisBox.style.background = "url('icons/teacher.png')";
@@ -116,33 +119,15 @@ const createApplicant = () => {
             break; 
     }
     game.appendChild(thisBox);
-    thisBox.addEventListener('click', () => scoreSub())
+    thisBox.addEventListener('click', (e) => scoreSub(e))
 
 };
 
-
-
-const applicantDrop = (topPos) => {
-    const length = random(100, ($(".game").width() - 100));
-    let velocity = document.getElementById("myRange").value * 100;
-
-    thisBox.style.transform = 'translateY(' + topPos + 'px)';
-
-    'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
-        .split(' ')
-        .forEach((eventName) => {
-            thisBox.addEventListener(eventName, () => thisBox.remove(), { once: true });
-        });
-
-
-    }
-
-
     
-    const scoreSub = () => {
-        var value = thisBox.style.width.substring(0, thisBox.style.width.length - 3);
-  
-    
+    const scoreSub = (e) => {
+
+
+        var value =  e.target
      switch (value) {
          case "1":
              score += 10;
@@ -188,32 +173,6 @@ const applicantDrop = (topPos) => {
      thisBox.remove()
     };
 
-
-  
-
- 
-
-
-
-
-
-
-
-const clock = () => {
-    var seconds = 120;
-    const count = () => {
-        seconds--;
-        if (seconds > 0) {
-            setTimeout(count, 1000);
-        } else {
-            alert("Game over");
-            clearInterval(startGame);
-        }
-    }
-    count();
-}
-clock();
-
 const toggleFunc = function() {
     switch (toggle.innerHTML) {
         case "Start":
@@ -234,7 +193,6 @@ const resumeGame = () => {
 }
 const resetFunc = () => {
     modal.style.display = "none";
-    clock()
     startGame()
     score = 0
     $(".score").html(score);
