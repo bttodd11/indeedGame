@@ -32,11 +32,10 @@ const animateApplicant = () => {
     var animateTime = slider.value / 60 + 'px',
     applicantPosition = parseInt($('.box').css('top'));
 
-    if(applicantPosition >= gameHeight){gameHeight.removeChild(boxArray[0])}
+    if(applicantPosition >= gameHeight){game.removeChild(boxArray[0])}
     else{
         $('.box').css({
             top: '+=' + animateTime,
-
         });
     }
 }
@@ -72,6 +71,7 @@ const pauseGame = () => {
 const createApplicant = () => {
     // Creating the box for the applicants
     let applicantSize = Math.floor(Math.random() * 100) + 10;
+    console.log(applicantSize)
     let leftPos = Math.floor(Math.random() * gameWidth);
     let thisBox = document.createElement('div');
     const randomIcon = Math.round(Math.random() * 5);
@@ -98,25 +98,25 @@ const createApplicant = () => {
         yPos +
         'px;';
 
-     thisBox.setAttribute('data-ptvalue', Math.round(applicantSize / 10))
+     thisBox.setAttribute('data-ptvalue', Math.floor(applicantSize / 10) )
     switch (randomIcon) {
         case 0:
-            thisBox.style.background = "url('icons/teacher.png')";
+            thisBox.style.background = "url('icons/bat1.png')";
             thisBox.style.backgroundSize = "contain";
             break;
         case 1:
-            thisBox.style.background = "url('icons/nurse.png')";
+            thisBox.style.background = "url('icons/bat2.png')";
             thisBox.style.backgroundSize = "contain";
             break;
         case 2:
-            thisBox.style.background = "url('icons/nursef.png')";
+            thisBox.style.background = "url('icons/bat3.png')";
             thisBox.style.backgroundSize = "contain";
             break;
-
         case 3:
-            thisBox.style.background = "url('icons/doctor.png')";
-            thisBox.style.backgroundSize = "contain";
-            break; 
+             thisBox.style.background = "url('icons/bat2.png')";
+             thisBox.style.backgroundSize = "contain";
+             break;
+
     }
     game.appendChild(thisBox);
     thisBox.addEventListener('click', (e) => scoreSub(e))
@@ -125,10 +125,9 @@ const createApplicant = () => {
 
     
     const scoreSub = (e) => {
+        var value =  e.currentTarget;
 
-
-        var value =  e.target
-     switch (value) {
+     switch (value.dataset.ptvalue) {
          case "1":
              score += 10;
              break;
@@ -169,8 +168,8 @@ const createApplicant = () => {
 
      }
      console.log(thisBox)
-     $(".score").html(score);
-     thisBox.remove()
+     $(".score").html("Score: " + score);
+     value.remove()
     };
 
 const toggleFunc = function() {

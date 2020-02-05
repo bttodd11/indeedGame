@@ -6,12 +6,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
 <div class="gameContainer">
+  <div class="gameHeader">
+ <div class="score">Score </div>
+    <div class="gameControls">
+      <button type="button" onclick="toggleFunc()" id="toggle">Start</button>
+    </div> 
+  </div>
     <div class="game">
-      <div class="score"> </div>
 </div>
 </div>
 
-<button type="button" onclick="toggleFunc()" id="toggle">Start</button>
 <div id="pauseWindow" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -19,7 +23,7 @@
       <div class="slidecontainer">
         <p class="slideText">Slider</p>
         <div class="inputShift">
-        <span class="inputDifficult">Easy</span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputEasy">Difficult</span>
+        <span class="inputEasy">Easy </span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputDifficult"> Difficult</span>
         </div>
         <p class="slideText">Value <span id="value"></span></p>
         <button type="button" onclick="resumeGame()" id="resume">Continue</button>
