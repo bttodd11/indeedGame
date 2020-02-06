@@ -28,9 +28,15 @@
     background-color: black;
 
   }
-
+  .logo{
+    width: 70px;
+   height: 70px;
+   margin-left: 20vh;
+  }
   .reset{
-      font-size: 25px;
+      font-size: 16px;
+      color: #AC51B5;
+      font-family: 'Nothing You Could Do', cursive;
   }
   p{
     font-size: 20px;
@@ -42,7 +48,6 @@
   button{
     background:none;
     border:none;
-    margin-left: 52vw;
     color: white;
     opacity: .8;
     cursor: pointer;
@@ -59,14 +64,7 @@
     top: 29px;
     flex: 0 1 40%;
   }
-  .descT{
-      font-size: 40px;
-      font-family: 'Noto Serif', serif;
-      text-align: center;
-      opacity: .8;
-      color: #AC51B5;
-      ;
-  }
+
   
   .box{
     width: 100px;
@@ -113,12 +111,17 @@
   }
   .slideText{
       font-size: 45px;
-      font-family: 'Kalam', cursive;
+      font-family: 'Nothing You Could Do', cursive;
       color: #AC51B5;
+      font-weight: 900;
       text-align: center;
-
   }
   
+  #resume{
+    font-size: 35px;
+      color: #AC51B5;
+      font-family: 'Nothing You Could Do', cursive;
+  }
   /* Mouse-over effects */
   .slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
@@ -161,9 +164,14 @@
    background-color: rgba(0,0,0,.0001) !important;
     margin: 15% auto; 
     /* padding: 20px; */
-    border: 1px solid #888;
+    border: 1px solid black;
     border-radius: 25px;
     width: 800px; /* Could be more or less, depending on screen size */
+  }
+  .modalControl{
+    text-align: center;
+    color: #AC51B5;
+    font-weight: 20px;
   }
   
   /* The Close Button */

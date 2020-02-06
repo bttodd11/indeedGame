@@ -71,7 +71,6 @@ const pauseGame = () => {
 const createApplicant = () => {
     // Creating the box for the applicants
     let applicantSize = Math.floor(Math.random() * 100) + 10;
-    console.log(applicantSize)
     let leftPos = Math.floor(Math.random() * gameWidth);
     let thisBox = document.createElement('div');
     const randomIcon = Math.round(Math.random() * 5);
@@ -182,6 +181,7 @@ const toggleFunc = function() {
         case "Pause":
             pauseGame()
             modal.style.display = "block";
+            toggle.innerHTML = "Start";
             break;
     }
   }
