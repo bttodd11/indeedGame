@@ -99,14 +99,14 @@
     transition: opacity .2s;
   }
   .inputDifficult{
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Kalam', cursive;
     color: red;
     padding-right: 3%;
 
   }
   .inputEasy{
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Kalam', cursive;
     color: green;
     padding-left: 3%;
@@ -114,6 +114,7 @@
   }
   .slideText{
       font-size: 35px;
+      letter-spacing: -2px;
       font-family: 'Nothing You Could Do', cursive;
       color: #AC51B5;
       font-weight: 900;
@@ -167,9 +168,9 @@
    background-color: rgba(0,0,0,.0001) !important;
     margin: 15% auto; 
     /* padding: 20px; */
-    border: 1px solid black;
+    border: 4px solid black;
     border-radius: 25px;
-    width: 800px; /* Could be more or less, depending on screen size */
+    width: 50vh; /* Could be more or less, depending on screen size */
   }
   .modalControl{
     text-align: center;
@@ -177,20 +178,7 @@
     font-weight: 20px;
   }
   
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+
 
 
 
@@ -199,7 +187,8 @@
     height: 26px;
     -webkit-appearance: none;
     margin: 10px 0;
-    width: 73%;
+    border-radius: 25px;
+    width: 63%;
     background-color: black;
   }
   input[type=range]:focus {
@@ -221,12 +210,10 @@
     height: 35px;
     width: 39px;
     border-radius: 7px;
-    /* background: #65001C; */
     background: url(../icons/batFace.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -3.5px;

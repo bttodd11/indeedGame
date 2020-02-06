@@ -189,9 +189,11 @@ const toggleFunc = function() {
 const resumeGame = () => {
     modal.style.display = "none";
     startGame();
+    toggle.innerHTML = "Pause";
 }
 const resetFunc = () => {
     modal.style.display = "none";
+    toggle.innerHTML = "Pause"
     startGame()
     score = 0
     $(".score").html(score);
