@@ -34,7 +34,7 @@
    margin-left: 20vh;
   }
   .reset{
-      font-size: 16px;
+      font-size: 26px;
       color: #AC51B5;
       font-family: 'Nothing You Could Do', cursive;
   }
@@ -74,6 +74,9 @@
     cursor: pointer;
     z-index:100;
   }
+  .inputShift{
+    margin: auto 0;
+  }
   
   .move{
      transform:translateY(100vh);
@@ -110,7 +113,7 @@
 
   }
   .slideText{
-      font-size: 45px;
+      font-size: 35px;
       font-family: 'Nothing You Could Do', cursive;
       color: #AC51B5;
       font-weight: 900;
@@ -118,7 +121,7 @@
   }
   
   #resume{
-    font-size: 35px;
+    font-size: 24px;
       color: #AC51B5;
       font-family: 'Nothing You Could Do', cursive;
   }
