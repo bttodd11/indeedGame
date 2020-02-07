@@ -181,7 +181,8 @@ const toggleFunc = function() {
         case "Pause":
             pauseGame()
             modal.style.display = "block";
-            toggle.innerHTML = "Start";
+            document.getElementById("overlay").style.display = "block";
+            toggle.innerHTML = "";
             break;
     }
   }
@@ -190,24 +191,13 @@ const resumeGame = () => {
     modal.style.display = "none";
     startGame();
     toggle.innerHTML = "Pause";
+    document.getElementById('overlay').style.opacity = '1';
 }
 const resetFunc = () => {
     modal.style.display = "none";
     toggle.innerHTML = "Pause"
     startGame()
-    score = 0
+    document.getElementById('overlay').style.opacity = '1';
+    score = 0;
     $(".score").html(score);
   }
-
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
