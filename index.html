@@ -5,10 +5,11 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
+  <body>
 <div class="gameContainer">
   <div class="gameHeader">
  <div class="score">Score </div>
-< <img src="../icons/batFace.png" class="logo" alt="">
+    <div class="title">Chiroptophobia</div>
     <div class="gameControls">
       <button type="button" onclick="toggleFunc()" id="toggle">Start</button>
     </div> 
@@ -21,21 +22,19 @@
     <!-- Modal content -->
     <div class="modal-content">
       <div class="slidecontainer">
-        <p class="slideText">Chiroptophobia</p>
+        <p class="slideText">PLEASE ADJUST YOUR SPEED</p>
         <div class="inputShift">
         <span class="inputEasy">Easy </span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputDifficult"> Difficult</span>
         </div>
         <p class="speed">Speed <span id="value"></span></p>
       <div class="modalControl">
         <button type="button" onclick="resumeGame()" id="resume">Continue</button>
-        <br>
         <button type="button" onclick="resetFunc()" class="reset" id="resume">Reset</button>
         </div>
       </div>
     </div>
-  
   </div>
-<br>
+
 <script src="javascript/main.js"></script>
 </body>
 
