@@ -27,7 +27,7 @@
     margin: 0 auto; 
   }
   .mainTitle{
-       font-size: 85px;
+      font-size: 85px;
       letter-spacing: -3px;
       font-family: 'Nothing You Could Do', cursive;
       font-weight: 900;
@@ -46,11 +46,11 @@
    
   }
 
-  .start{
+  button.start{
     color: white; 
-    width: 100%;
-    font-size: 50px;
     margin: 0 auto;
+    position: relative;
+margin:  0 auto;
   }
 
   .game{

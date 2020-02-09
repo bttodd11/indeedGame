@@ -199,6 +199,9 @@ const resumeGame = () => {
     toggle.innerHTML = "Pause";
     document.getElementById('overlay').style.opacity = '1';
 }
+const test = () => {
+    console.log("test");
+}
 const resetFunc = () => {
     modal.style.display = "none";
     toggle.innerHTML = "Pause"
