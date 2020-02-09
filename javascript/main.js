@@ -24,6 +24,12 @@ let velocity = 5000;
 
 slider.oninput = () => {
     output.innerHTML = slider.value;
+    if(output.innerHTML >= 50){
+        output.style.color = "red";
+    }
+    else{
+        output.style.color = "green";
+    }
   }
 
 

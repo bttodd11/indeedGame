@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Kalam|Noto+Serif|Shadows+Into+Light|Nothing+You+Could+Do&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+  <body>
+<div class="gameContainer">
+  <div class="gameHeader">
+ <div class="score">Score </div>
+    <div class="title">Chiroptophobia</div>
+    <div class="gameControls">
+      <button type="button" onclick="toggleFunc()" id="toggle">Start</button>
+    </div> 
+  </div>
+    <div class="game">
+</div>
+
+<div id="pauseWindow" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="slidecontainer">
+        <p class="slideText">PLEASE ADJUST YOUR SPEED</p>
+        <div class="inputShift">
+        <span class="inputEasy">Easy </span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputDifficult"> Difficult</span>
+        </div>
+        <p class="speed">Speed <span id="value"></span></p>
+      <div class="modalControl">
+        <button type="button" onclick="resumeGame()" id="resume">Continue</button>
+        <button type="button" onclick="resetFunc()" class="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="javascript/main.js"></script>
+</body>
+
+</html>
