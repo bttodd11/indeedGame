@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link
         href="https://fonts.googleapis.com/css?family=Kalam|Noto+Serif|Shadows+Into+Light|Nothing+You+Could+Do&display=swap"
@@ -10,9 +9,18 @@
 </head>
 <body class="homeScreen">
     <div class="circle">
-      <img src="icons/batFace.png" class="mainLogo" alt="">
-      <p class="mainTitle">Chiroptophobia</p>
+        <img src="icons/batFace.png" class="mainLogo" alt="">
+        <p class="mainTitle">Chiroptophobia</p>
+        <p class="slideText">PLEASE ADJUST YOUR SPEED</p>
+        <div class="homeModal">
+            <span class="inputEasy">Easy </span><input type="range" min="1" max="100" value="50" id="myRange"><span
+                class="inputDifficult"> Difficult</span>
+
+        <div class="modalControl">
+           <span class="speed">Speed: </span> <span id="value"></span> </span>
+            <button type="button" onclick="test()" class="start">Start Game</button>
+        </div>
     </div>
-    <button type="button" onclick="test()" class="start">Start Game</button>
+    <script src="javascript/homePage.js"></script>
 </body>
 </html>
