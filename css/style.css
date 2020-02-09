@@ -17,7 +17,6 @@
     width: 550px;
     background-color: #AC51B5;
     border-radius: 50%;
-    display: inline-block;
     position: relative;
     margin: 0 auto;
   }
@@ -28,19 +27,30 @@
     margin: 0 auto; 
   }
   .mainTitle{
-       font-size: 55px;
+       font-size: 85px;
       letter-spacing: -3px;
       font-family: 'Nothing You Could Do', cursive;
       font-weight: 900;
       text-align: center;
       position: relative;
       color: transparent;
-      text-shadow: 0 0 32px white;
-      color:#AC51B5;
+      text-shadow: 0 0 32px black;
+      color: #AC51B5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      opacity: .7;
+   
   }
 
-  .startGame{
-    color: black;
+  .start{
+    color: white; 
+    width: 100%;
+    font-size: 50px;
+    margin: 0 auto;
   }
 
   .game{
