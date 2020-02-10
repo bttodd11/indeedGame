@@ -1,294 +1,291 @@
-
-  .gameContainer{
-    margin: 0 auto;
-    width: 800px;
-    height: 650px;
-    border-radius: 4px;
-    position: relative;
-  }
-  .mainLogo{
-    position: relative;
-    width: 50%;
-    height: 50%;
-    margin-left: 25%;
-    display: block;
-  }
-  .mainTitle{
-      font-size: 40px;
-      letter-spacing: 6px;
-      font-family: 'Nothing You Could Do', cursive;
-      font-weight: 900;
-      text-align: center;
-      position: absolute;
-      color: transparent;
-      text-shadow: 0 0 32px black;
-      color: #AC51B5;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      opacity: .7;
-  }
-  .game{
-    width: 800px;
-    height: 600px;
-    background-image: url("../background/indeedBG.jpg");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  .gameHeader{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: black;
-  }
-  .title{
-      font-size: 55px;
-      letter-spacing: -3px;
-      font-family: 'Nothing You Could Do', cursive;
-      font-weight: 900;
-      text-align: center;
-      color: transparent;
-      text-shadow: 0 0 32px white;
-      color:#AC51B5;
-      margin-left: 30%;
-  }
-  #reset{
-      display: none;
-      font-size: 20px;
-      color: #AC51B5;
-      font-family: 'Nothing You Could Do', cursive;
-      opacity: .8;
-  }
-  button{
-    background:none;
-    border:none;
-    color: white;
-    opacity: .8;
-    cursor: pointer;
-    font-size: 45px;
-    font-family: 'Shadows Into Light', cursive;
-
-  }
-.slideText{
-  font-family: 'Nothing You Could Do', cursive;
-  color: #AC51B5;
+.gameContainer {
+  margin: 0 auto;
+  width: 800px;
+  height: 650px;
+  border-radius: 4px;
+  position: relative;
+}
+.mainLogo {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  display: block;
+}
+.mainTitle {
+  font-size: 40px;
+  letter-spacing: 6px;
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 900;
+  text-align: center;
+  position: absolute;
+  color: transparent;
+  text-shadow: 0 0 32px black;
+  color: #ac51b5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.7;
+}
+.game {
+  width: 800px;
+  height: 600px;
+  background-image: url("../background/indeedBG.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.gameHeader {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: black;
+}
+.title {
+  font-size: 55px;
+  letter-spacing: -3px;
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 900;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 32px white;
+  color: #ac51b5;
+  margin-left: 30%;
+}
+#reset {
+  display: none;
+  font-size: 20px;
+  color: #ac51b5;
+  font-family: "Nothing You Could Do", cursive;
+  opacity: 0.8;
+}
+button {
+  background: none;
+  border: none;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  font-size: 45px;
+  font-family: "Shadows Into Light", cursive;
+}
+.slideText {
+  font-family: "Nothing You Could Do", cursive;
+  color: #ac51b5;
   text-align: center;
   font-size: 16px;
   letter-spacing: 2px;
 }
-  .score{
-    font-size: 45px;
-    font-family: 'Shadows Into Light', cursive;
-    color: white;
-    opacity: .7;
-    position: absolute;
-    top: 29px;
-    flex: 0 1 40%;
-  }
-  .box{
-    width: 100px;
-    height: 100px;
-    position:absolute;
-    transition: transform 1.5s linear;
-    cursor: pointer;
-    z-index:100;
-  }
-  .inputShift{
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .move{
-     transform:translateY(100vh);
-  }
-  
-  .slidecontainer {
-    width: 100%; /* Width of the outside container */
-  }
-  
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-  }
-  .inputDifficult{
-    font-size: 17px;
-    font-family: 'Kalam', cursive;
-    color: red;
-    padding-right: 3%;
-
-  }
-  .inputEasy{
-    font-size: 17px;
-    font-family: 'Kalam', cursive;
-    color: green;
-    padding-left: 3%;
-  }
-.speed{
-      font-size: 30px;
-      color: #AC51B5;
-      font-family: 'Nothing You Could Do', cursive;
-      text-align: center;
+.score {
+  font-size: 45px;
+  font-family: "Shadows Into Light", cursive;
+  color: white;
+  opacity: 0.7;
+  position: absolute;
+  top: 29px;
+  flex: 0 1 40%;
 }
-  #resume{
-    font-size: 20px;
-    text-align: center;
-    color: #AC51B5;
-    font-family: 'Nothing You Could Do', cursive;
-    opacity: .8;
-  }
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transition: transform 1.5s linear;
+  cursor: pointer;
+  z-index: 100;
+}
+.inputShift {
+  margin: 0 auto;
+  width: 100%;
+}
 
-  /* The Modal (background) */
+.move {
+  transform: translateY(100vh);
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+.inputDifficult {
+  font-size: 17px;
+  font-family: "Kalam", cursive;
+  color: red;
+  padding-right: 3%;
+}
+.inputEasy {
+  font-size: 17px;
+  font-family: "Kalam", cursive;
+  color: green;
+  padding-left: 3%;
+}
+.speed {
+  font-size: 30px;
+  color: #ac51b5;
+  font-family: "Nothing You Could Do", cursive;
+  text-align: center;
+}
+#resume {
+  font-size: 20px;
+  text-align: center;
+  color: #ac51b5;
+  font-family: "Nothing You Could Do", cursive;
+  opacity: 0.8;
+}
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4caf50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* The Modal (background) */
 .modal {
-    display: block; /* Hidden by default */
-    position: absolute;
-    left: 0%;
-    top: 0px;
-    z-index: 99;
-    width: 800px;
-    height: 710px;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-   background-color: rgba(0,0,0,.6) !important;
-    margin: 0 auto; 
-    position: relative;
-    top: 30%;
-    vertical-align: middle;
-    border-radius: 25px;
-    width: 50%; /* Could be more or less, depending on screen size */
-  }
-  .modalControl{
-    text-align: center;
-    color: #AC51B5;
-    font-weight: 20px;
-  }
-  input[type=range] {
-    height: 26px;
-    -webkit-appearance: none;
-    margin: 10px 0;
-    border-radius: 25px;
-    width: 63%;
-    background-color: black;
-  }
-  input[type=range]:focus {
-    outline: none;
-  }
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 23px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #AC51B5;
-    border-radius: 25px;
-    border: 0px solid #000101;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 35px;
-    width: 39px;
-    border-radius: 7px;
-    background: url(../icons/batFace.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -3.5px;
-  }
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #AC51B5;
-  }
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 13px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #AC51B5;
-    border-radius: 25px;
-    border: 0px solid #000101;
-  }
-  input[type=range]::-moz-range-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001C;
-    cursor: pointer;
-  }
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 13px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: #AC51B5;
-    border: 0px solid #000101;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: #AC51B5;
-    border: 0px solid #000101;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000;
-  }
-  input[type=range]::-ms-thumb {
-    margin-top: 1px;
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001C;
-    cursor: pointer;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: #AC51B5;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: #AC51B5;
-  }
+  display: block; /* Hidden by default */
+  position: absolute;
+  left: 0%;
+  top: 0px;
+  z-index: 99;
+  width: 800px;
+  height: 710px;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+  vertical-align: middle;
+  border-radius: 25px;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+.modalControl {
+  text-align: center;
+  color: #ac51b5;
+  font-weight: 20px;
+}
+input[type="range"] {
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  border-radius: 25px;
+  width: 63%;
+  background-color: black;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 23px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #ac51b5;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 35px;
+  width: 39px;
+  border-radius: 7px;
+  background: url(../icons/batFace.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ac51b5;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #ac51b5;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #ac51b5;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #ac51b5;
+}

@@ -3,7 +3,6 @@ let score = 0;
 let int;
 let timeElasped;
 let thisBox;
-let isModalOpen = true;
 let isGamePlaying = true;
 const modal = document.getElementById("pauseWindow");
 const output = document.getElementById("value");
@@ -63,20 +62,16 @@ gameTimer = function(timestamp){
 
 
 
-// The function to start the setInterval that will start the 
-// game, This will drop 6 applicants every 4 seconds.
+// Starting game that will start animations 
 const handlerStartGame = () => {
     gameRaf = requestAnimationFrame(gameTimer);
 };
 
-// Pausing game that will clear the previous setInterval
+// Pausing game that will cancel animations
 const handlerPauseGame = () => {
    cancelAnimationFrame(gameRaf);
 }
 
-
-// The function that will drop the applicants with a random size
-// and a chosen speed
 const createApplicant = () => {
     // Creating the box for the applicants
     let applicantSize = Math.floor(Math.random() * 100) + 10;
@@ -129,8 +124,6 @@ const createApplicant = () => {
     game.appendChild(thisBox);
     thisBox.addEventListener('click', (e) => scoreSub(e))
 };
-
-    
     const scoreSub = (e) => {
         var value =  e.currentTarget;
 
@@ -177,7 +170,6 @@ const createApplicant = () => {
      $(".score").html("Score: " + score);
      value.remove()
     };
-
 const toggleFunc = function() {
     switch (toggle.innerHTML) {
         case "Start":
@@ -199,14 +191,12 @@ const toggleFunc = function() {
             break;
     }
 }
-  
-
-const resumeGame = () => {
+const handlerResumeGame = () => {
     modal.style.display = "none";
     handlerStartGame();
     toggle.innerHTML = "Pause";
 }
-const resetFunc = () => {
+const handlerResetFunc = () => {
     modal.style.display = "block";
     logo.style.display = "block";
     logoHeading.style.display = "block";
