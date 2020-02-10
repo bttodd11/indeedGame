@@ -7,10 +7,14 @@ let isModalOpen = true;
 let isGamePlaying = true;
 const modal = document.getElementById("pauseWindow");
 const output = document.getElementById("value");
+const resume = document.getElementById("resume");
+const logo = document.getElementsByClassName("mainLogo")[0];
+const logoHeading = document.getElementsByClassName("mainTitle")[0];
 const slider = document.getElementById("myRange");
 const btn = document.getElementById("pause");
 const span = document.getElementsByClassName("close")[0];
 const toggle = document.getElementById("toggle");
+const scoreRestart = document.getElementsByClassName("score")[0];
 const reset = document.getElementById("reset");
 const game = document.querySelector(".game");
 const gameWidth = game.clientWidth;
@@ -19,6 +23,7 @@ let gameRaf,
 start = null,
 last = 0
 
+output.innerHTML = slider.value;
 
 slider.oninput = () => {
     output.innerHTML = slider.value;
@@ -60,12 +65,12 @@ gameTimer = function(timestamp){
 
 // The function to start the setInterval that will start the 
 // game, This will drop 6 applicants every 4 seconds.
-const startGame = () => {
+const handlerStartGame = () => {
     gameRaf = requestAnimationFrame(gameTimer);
 };
 
 // Pausing game that will clear the previous setInterval
-const pauseGame = () => {
+const handlerPauseGame = () => {
    cancelAnimationFrame(gameRaf);
 }
 
@@ -176,27 +181,38 @@ const createApplicant = () => {
 const toggleFunc = function() {
     switch (toggle.innerHTML) {
         case "Start":
-            startGame();
+            handlerStartGame();
             toggle.innerHTML = "Pause";
             break;
     
         case "Pause":
-            pauseGame()
+            if(isGamePlaying){
+            handlerPauseGame()
             modal.style.display = "block";
+            logo.style.display = "none";
+            logoHeading.style.display = "none";
+            logo.style.display = "none";
+            resume.innerHTML = "Continue"
             toggle.innerHTML = "";
+            reset.style.display = "inline-block";
+            }
             break;
     }
-  }
+}
+  
 
 const resumeGame = () => {
     modal.style.display = "none";
-    startGame();
+    handlerStartGame();
     toggle.innerHTML = "Pause";
 }
 const resetFunc = () => {
-    modal.style.display = "none";
-    toggle.innerHTML = "Pause"
-    startGame()
+    modal.style.display = "block";
+    logo.style.display = "block";
+    logoHeading.style.display = "block";
+    reset.style.display = "none";
+    resume.innerHTML = "Start Game";
     score = 0;
     $(".score").html(score);
+    scoreRestart.innerHTML = "Score";
   }

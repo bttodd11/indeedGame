@@ -8,7 +8,7 @@
   <body>
 <div class="gameContainer">
   <div class="gameHeader">
- <div class="score">Score </div>
+ <div class="score">Score</div>
     <div class="title">Chiroptophobia</div>
     <div class="gameControls">
       <button type="button" onclick="toggleFunc()" id="toggle">Start</button>
@@ -20,17 +20,17 @@
 <div id="pauseWindow" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <img src="icons/batFace.png" class="mainLogo" alt="">
       <p class="mainTitle">Chiroptophobia</p>
+      <img src="icons/batFace.png" class="mainLogo" alt="">
       <div class="slidecontainer">
         <p class="slideText">PLEASE ADJUST YOUR SPEED</p>
         <div class="inputShift">
         <span class="inputEasy">Easy </span><input type="range" min="1" max="100" value="50" id="myRange"><span class="inputDifficult"> Difficult</span>
         </div>
-        <p class="speed">Speed <span id="value"></span></p>
+        <p class="speed">Game Speed <span id="value"></span></p>
       <div class="modalControl">
         <button type="button" onclick="resumeGame()" id="resume">Start Game</button>
-        <button type="button" onclick="resetFunc()" class="reset">Reset</button>
+        <button type="button" onclick="resetFunc()" id="reset">Reset</button>
         </div>
       </div>
     </div>
@@ -40,3 +40,7 @@
 <script src="javascript/main.js"></script>
 </body>
 </html>
+
+
+
+
