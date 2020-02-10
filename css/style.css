@@ -2,15 +2,9 @@
   .gameContainer{
     margin: 0 auto;
     width: 800px;
-    height: 600px;
+    height: 650px;
     border-radius: 4px;
     position: relative;
-  }
-  .homeScreen{
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
   }
   .circle{
     height: 750px;
@@ -23,13 +17,26 @@
   }
   .mainLogo{
     position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto; 
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    display: inline-block;
+
   }
+  .mainLogo::after{
+    content: "";
+    height: 750px;
+    width: 750px;
+    background-color: #AC51B5;
+    border-radius: 50%;
+    position: absolute;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
   .mainTitle{
-      font-size: 85px;
-      letter-spacing: -3px;
+      font-size: 45px;
+      letter-spacing: 6px;
       font-family: 'Nothing You Could Do', cursive;
       font-weight: 900;
       text-align: center;
@@ -42,7 +49,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: .7;
+      opacity: .5;
   }
   #value{
     letter-spacing: 10px;
@@ -51,13 +58,6 @@
     font-size: 30px;
   }
 
-  button.start{
-    color: #AC51B5; 
-    letter-spacing: 7px;
-    margin: 0 auto;
-    width: 100%;
-    font-size: 35px;
-  }
 
   .game{
     width: 800px;
@@ -91,6 +91,7 @@
       margin-left: 30%;
   }
   .reset{
+      display: none;
       font-size: 26px;
       color: #AC51B5;
       font-family: 'Nothing You Could Do', cursive;
@@ -105,6 +106,13 @@
     font-size: 45px;
     font-family: 'Shadows Into Light', cursive;
 
+  }
+  button.start{
+    color: #AC51B5; 
+    letter-spacing: 7px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 35px;
   }
 .slideText{
   font-family: 'Nothing You Could Do', cursive;
@@ -208,7 +216,7 @@
 
   /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: absolute;
     left: 0%;
     top: 0px;
