@@ -1,4 +1,6 @@
 let value;
+let newValue;
+
 
 const output = document.getElementById("value");
 const slider = document.getElementById("myRange");
@@ -15,7 +17,3 @@ slider.oninput = () => {
         output.style.color = "green";
     }
   }
-
-  const test = () => {
-    console.log("test");
-}

@@ -3,10 +3,9 @@ let score = 0;
 let int;
 let timeElasped;
 let thisBox;
-let value;
-const slider = document.getElementById("myRange");
-const output = document.getElementById("value");
 const modal = document.getElementById("pauseWindow");
+// const output = document.getElementById("value");
+// const slider = document.getElementById("myRange");
 const btn = document.getElementById("pause");
 const span = document.getElementsByClassName("close")[0];
 const toggle = document.getElementById("toggle");
@@ -17,9 +16,6 @@ const gameHeight = game.clientHeight;
 let gameRaf,
 start = null,
 last = 0
-
-output.innerHTML = slider.value;
-let velocity = 5000;
 
 
 slider.oninput = () => {
@@ -125,7 +121,6 @@ const createApplicant = () => {
     }
     game.appendChild(thisBox);
     thisBox.addEventListener('click', (e) => scoreSub(e))
-
 };
 
     
@@ -172,7 +167,6 @@ const createApplicant = () => {
              break;
 
      }
-     console.log(thisBox)
      $(".score").html("Score: " + score);
      value.remove()
     };
@@ -187,7 +181,6 @@ const toggleFunc = function() {
         case "Pause":
             pauseGame()
             modal.style.display = "block";
-            document.getElementById("overlay").style.display = "block";
             toggle.innerHTML = "";
             break;
     }
@@ -197,13 +190,11 @@ const resumeGame = () => {
     modal.style.display = "none";
     startGame();
     toggle.innerHTML = "Pause";
-    document.getElementById('overlay').style.opacity = '1';
 }
 const resetFunc = () => {
     modal.style.display = "none";
     toggle.innerHTML = "Pause"
     startGame()
-    document.getElementById('overlay').style.opacity = '1';
     score = 0;
     $(".score").html(score);
   }
